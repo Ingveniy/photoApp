@@ -1,0 +1,42 @@
+{
+  "name": "photoAppServer",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "repository": "",
+  "engines": {
+    "node": ">=5",
+    "npm": ">=3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --exec babel-node index.js",
+    "start": "node build/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "NODE_ENV=production babel -d ./build ./ -s --copy-files && cd ./build && find . -name '*.js.map' -print0 | xargs -0 -P0 rm",
+    "build": "npm run clean && npm run build-server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-async-to-generator": "^7.4.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "bluebird": "^3.5.5",
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.4.5",
+    "@babel/polyfill": "^7.4.4",
+    "nodemon": "^1.18.9"
+  }
+}

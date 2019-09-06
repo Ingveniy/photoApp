@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>photoApp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500&subset=latin,cyrillic-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/style.css" rel="stylesheet" />
+  </head>
+  <body id="container">
+    <!-- Modal -->
+    <div onClick="closeImageModal()" class="modal modal-gallery">
+      <span class="modal-close">&times;</span>
+      <img onClick="openImageModal(this.src)" class="modal-image" />
+    </div>
+    <!-- Modal END -->
+    <div class="container-content">
+      <!-- Filters  -->
+      <div class="container-content-header">
+        <div class="container-content-header-search">
+          <div class="container-content-header-search-inputBlock">
+            <label>Author:</label>
+            <br />
+            <input
+              oninput="getUpdatedImageList()"
+              id="authorInput"
+              class="container-content-header-search-inputBlock-input"
+              type="text"
+              placeholder="Автор"
+              value=""
+            />
+          </div>
+          <div class="container-content-header-search-selectBlock">
+            <label>City:</label>
+            <br />
+            <select
+              onchange="getUpdatedImageList()"
+              id="citySelector"
+              class="container-content-header-search-selectBlock-select"
+            >
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- Filters END  -->
+      <!-- Images container -->
+      <div class="container-content-body"></div>
+      <!-- Images container END -->
+      <!-- Error container -->
+      <div class="container-content-error">
+        Unfortunately, we did not find anything for your request.
+        <br />
+        Try a different city or author.
+      </div>
+      <!-- Error container END -->
+    </div>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <script src="./assets/js/socket.io.js"></script>
+    <script src="/build.js"></script>
+  </body>
+</html>

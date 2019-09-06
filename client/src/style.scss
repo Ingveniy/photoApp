@@ -1,0 +1,249 @@
+$containerWidthLarge: 1400px;
+$containerWidthMedium: 1065px;
+$containerWidthSmall: 720px;
+$containerWidthLaptop: 720px;
+$containerWidthTablet: 425px;
+$containerWidthMobileL: 375px;
+$containerWidthMobileS: 340px;
+$containerWidthMobileM: 320px;
+
+html {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  align-items: center;
+  font-size: 18px;
+  overflow: hidden;
+  body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    .container-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .container-content-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #6dd7f5;
+        min-height: 100px;
+        color: #fff;
+        width: 100%;
+        .container-content-header-search {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          width: $containerWidthLarge;
+          flex-wrap: wrap;
+          .container-content-header-search-inputBlock-input,
+          .container-content-header-search-selectBlock-select {
+            height: 30px;
+            font-size: 19px;
+            width: 240px;
+            color: #5c5a59;
+            outline: none;
+            border: #fff;
+            padding: 5px;
+            background-color: #fff;
+            margin-top: 4px;
+          }
+          .container-content-header-search-selectBlock-select {
+            height: 40px;
+            width: 250px;
+          }
+        }
+      }
+      .container-content-body {
+        padding-top: 50px;
+        width: $containerWidthLarge;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        overflow-y: auto;
+        overflow-x: hidden;
+    
+        .container-content-body-photoCart {
+          overflow: hidden;
+          background-color: #fff;
+          cursor: pointer;
+          margin-bottom: 20px;
+          width: 320px;
+          height: 320px;
+          .container-content-body-photoCart-garbage {
+            background-color: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.01));
+            height: 20px;
+            text-align: right;
+            position: relative;
+            margin-top: -44px;
+            bottom: 0;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px;
+            padding-bottom: 15px;
+            i {
+              font-size: 28px;
+            }
+            :hover {
+              color: #6dd7f5;
+            }
+          }
+          img {
+            height: 100%;
+            position: relative;
+            right: 160px;
+          }
+        }
+        .container-content-body-photoCart:hover {
+          -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.75);
+        }
+      }
+      .container-content-error {
+        color: #5c5a59;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        align-self: center;
+        margin-top: 15%;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-button {
+      height: 5px;
+      background-color: #ffffff;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #6dd7f5;
+    }
+    ::-webkit-scrollbar-track-piece {
+      background-color: #ffffff;
+    }
+    ::-webkit-scrollbar-thumb {
+      height: 50px;
+      background-color: #6dd7f5;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-corner {
+      background-color: #6dd7f5;
+    }
+    ::-webkit-resizer {
+      background-color: #6dd7f5;
+    }
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  .modal-close {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    color: #ffffff;
+    font-size: 50px;
+  }
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    max-width: 1300px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html
+    body
+    .container-content
+    .container-content-header
+    .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthMedium;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html
+    body
+    .container-content
+    .container-content-header
+    .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthSmall;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html
+    body
+    .container-content
+    .container-content-header
+    .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthLaptop;
+  }
+}
+@media screen and (max-width: 768px) {
+  html body .container-content .container-content-header {
+    min-height: 155px;
+  }
+  html body .container-content .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthTablet;
+  }
+}
+@media screen and (max-width: 425px) {
+  html
+    body
+    .container-content
+    .container-content-header
+    .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthMobileL;
+  }
+}
+@media screen and (max-width: 375px) {
+  html
+    body
+    .container-content
+    .container-content-header
+    .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthMobileS;
+  }
+}
+@media screen and (max-width: 340px) {
+  html
+    body
+    .container-content
+    .container-content-header
+    .container-content-header-search,
+  html body .container-content .container-content-body {
+    width: $containerWidthMobileM;
+  }
+}
