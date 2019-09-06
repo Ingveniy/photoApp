@@ -1,9 +1,12 @@
-Для запуска приложения в DEV режиме, необходимо выполнить команды 
+
+
+
+#Для запуска приложения в DEV режиме, необходимо выполнить команды 
 
 В папке client:
-npm i
-npm start
+<code>npm i</code>
+<code>npm start</code>
 
 В папке server:
-npm i 
-npm run start:dev
+<code>npm i </code>
+<code>npm run start:dev</code>

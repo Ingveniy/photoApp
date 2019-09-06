@@ -131,7 +131,3 @@ function toogleErrorOnPage(error) {
     imagesBlock.style.display = "flex";
   }
 }
-
-try {
-  require("./style.scss");
-} catch (err) {}
